@@ -3,11 +3,17 @@
   "version": "0.8.4",
   "description": "Injecting remotedev-app monitor into official Remote debugger of React Native",
   "main": "lib/main.js",
+  "files": [
+    "bin",
+    "lib",
+    "bundle.js"
+  ],
   "bin": {
     "remotedev-debugger": "bin/cli.js",
     "remotedev-rn-debugger": "bin/cli.js"
   },
   "scripts": {
+    "postinstall": "npm run prepublish",
     "lint": "eslint app/ src/ test/*.js webpack.*",
     "test": "mocha --compilers js:babel-core/register -r test/setup test/*.test.js",
     "clean": "rm bundle.js",
